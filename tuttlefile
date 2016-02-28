@@ -1,0 +1,10 @@
+file://flicker.html <- https://www.flickr.com/ ! download
+
+https://raw.githubusercontent.com/lexman/test-sisyphus-ssh/master/flickr.html <- file://flicker.html
+    git add flickr.html
+    set TODAY=`date +%Y%m%d-%H:%M`
+    git commit -m "[data] automatic update $TODAY" || exit 0
+    git pull --rebase
+    git push
+    # Github publication is not atomic, so we wait until the file pushed is available
+    sleep 5
