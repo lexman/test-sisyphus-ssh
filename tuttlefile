@@ -1,9 +1,8 @@
 file://flickr.html <- https://www.flickr.com/ ! download
 
 https://raw.githubusercontent.com/lexman/test-sisyphus-ssh/master/flickr.html <- file://flickr.html
-    git config --global user.email "sisyphus-bot@lexman.org"
-    git config --global user.name "Sisyphus Bot"
     git add flickr.html
+    ssh git@github.com
     set TODAY=`date +%Y%m%d-%H:%M`
     git commit -m "[data] automatic update $TODAY" || exit 0
     git pull --rebase
